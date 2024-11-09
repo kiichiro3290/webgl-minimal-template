@@ -1,12 +1,9 @@
-attribute vec4 aVertexPosition;
-attribute vec4 aVertexColor;
-
-uniform mat4 uModelViewMatrix;
-uniform mat4 uProjectionMatrix;
-
-varying lowp vec4 vColor;
+attribute vec4 position;
+attribute vec4 color;
+uniform mat4 mvpMatrix;
+varying vec4 vColor;
 
 void main(void) {
-    gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
-    vColor = aVertexColor;
+    vColor = color;
+    gl_Position = mvpMatrix * vec4(position.xyz, 1.0);
 }
