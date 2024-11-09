@@ -11,7 +11,8 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 'index': resolve(root, 'index.html'),
-                'sample1': resolve(root, 'fragment2D', 'index.html'),
+                'sample1': resolve(root, 'fragment', 'index.html'),
+                'sample2': resolve(root, '3D', 'index.html'),
             },
         },
     },
